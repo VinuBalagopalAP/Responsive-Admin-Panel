@@ -1,4 +1,4 @@
-import 'package:responsive_admin_panel/constants.dart';
+import 'package:responsive_admin_panel/core/constants.dart';
 import 'package:flutter/material.dart';
 
 class CloudStorageInfo {

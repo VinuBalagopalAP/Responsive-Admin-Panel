@@ -11,15 +11,15 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Image.asset(
-          'assets/images/profile_pic.png',
-          height: 38,
+        Text(
+          'Dashboard',
+          style: Theme.of(context).textTheme.headline6,
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-          child: Text('Flutter Vinu'),
+        const Spacer(flex: 2),
+        const Expanded(
+          child: SearchField(),
         ),
-        const Icon(Icons.keyboard_arrow_down),
+        const ProfileCard(),
       ],
     );
   }
@@ -53,6 +53,41 @@ class SearchField extends StatelessWidget {
             child: SvgPicture.asset('assets/icons/Search.svg'),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ProfileCard extends StatelessWidget {
+  const ProfileCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(left: defaultPadding),
+      padding: const EdgeInsets.symmetric(
+        horizontal: defaultPadding,
+        vertical: defaultPadding / 2,
+      ),
+      decoration: BoxDecoration(
+        color: secondaryColor,
+        border: Border.all(color: Colors.white10),
+        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+      ),
+      child: Row(
+        children: <Widget>[
+          Image.asset(
+            'assets/images/profile_pic.png',
+            height: 38,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            child: Text('Flutter Vinu'),
+          ),
+          const Icon(Icons.keyboard_arrow_down),
+        ],
       ),
     );
   }

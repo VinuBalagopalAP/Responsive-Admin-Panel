@@ -11,46 +11,29 @@ class DashboardScreen extends StatelessWidget {
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(defaultPadding),
         child: Column(
-          children: [
+          children: <Widget>[
+            const Header(),
+            const SizedBox(height: defaultPadding),
             Row(
               children: <Widget>[
-                Text(
-                  'Dashboard',
-                  style: Theme.of(context).textTheme.headline6,
+                Expanded(
+                  child: Container(
+                    height: 500,
+                    color: Colors.white,
+                  ),
                 ),
-                const Spacer(flex: 2),
-                const Expanded(
-                  child: SearchField(),
+                const SizedBox(width: defaultPadding),
+                Expanded(
+                  child: Container(
+                    height: 500,
+                    color: Colors.blue,
+                  ),
                 ),
-                const ProfileCard(),
               ],
             )
           ],
         ),
       ),
-    );
-  }
-}
-
-class ProfileCard extends StatelessWidget {
-  const ProfileCard({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: defaultPadding),
-      padding: const EdgeInsets.symmetric(
-        horizontal: defaultPadding,
-        vertical: defaultPadding / 2,
-      ),
-      decoration: BoxDecoration(
-        color: secondaryColor,
-        border: Border.all(color: Colors.white10),
-        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-      ),
-      child: const Header(),
     );
   }
 }

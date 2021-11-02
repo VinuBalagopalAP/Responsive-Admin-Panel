@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_admin_panel/core/constants.dart';
 import 'package:responsive_admin_panel/screens/dashboard/components/header.dart';
+import 'package:responsive_admin_panel/screens/dashboard/components/myfiles.dart';
 import 'package:responsive_admin_panel/screens/dashboard/components/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -17,16 +18,10 @@ class DashboardScreen extends StatelessWidget {
             const SizedBox(height: defaultPadding),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: const <Widget>[
+                Expanded(flex: 2, child: MyFiles()),
+                SizedBox(width: defaultPadding),
                 Expanded(
-                  flex: 2,
-                  child: Container(
-                    height: 500,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(width: defaultPadding),
-                const Expanded(
                   child: StorageDetails(),
                 ),
               ],

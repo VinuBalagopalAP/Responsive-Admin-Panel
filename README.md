@@ -1,6 +1,6 @@
 # Responsive Admin Panel
 
-This is a clone from YouTube tutorial.
+* This is a clone from YouTube tutorial.
 
 ## Feature
 
